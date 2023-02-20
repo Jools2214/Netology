@@ -1,5 +1,5 @@
 #!/bin/bash
-read -e -p "Введите путь к дирректории: " path
+read -e -p "Введите путь к директории: " path
 if [ -d "$path" ]
 then
     echo "Путь существует"
