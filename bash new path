@@ -1,0 +1,8 @@
+#!/bin/bash
+read -e -p "Введите путь к дирректории: " path
+if [ -d "$path" ]
+then
+    echo "Путь существует"
+else
+    mkdir -p "$path"
+fi
