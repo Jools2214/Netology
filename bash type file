@@ -3,23 +3,23 @@
 echo -n "Введите имя файла: "
 read TIPE
 
-echo -n "Ваш тип файла $TIPE "
+echo -n "Ваш тип файла $TIPE - "
 
 case $TIPE in
 
-  jpg | gif | png)
+  *.jpg | *.gif | *.png )
     echo -n "image"
     ;;
 
-  mp3 | wav)
+  *.mp3 | *.wav )
     echo -n "audio"
     ;;
 
-  txt | doc)
+  *.txt | *.doc )
     echo -n "text"
     ;;
 
-  *)
+  * )
     echo -n "unknown"
     ;;
 esac
