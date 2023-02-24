@@ -7,19 +7,19 @@ echo -n "Ваш тип файла $TIPE "
 
 case $NAME in
 
-  jpg | gif | png )
-    echo -n "Картинка"
+  jpg | gif | png)
+    echo -n "image"
     ;;
 
-  mp3 | wav )
-    echo -n "Звук"
+  mp3 | wav)
+    echo -n "audio"
     ;;
 
-  txt | doc )
-    echo -n "Текст"
+  txt | doc)
+    echo -n "text"
     ;;
 
-  * )
-    echo -n "Неизвестно"
+  *)
+    echo -n "unknown"
     ;;
 esac
