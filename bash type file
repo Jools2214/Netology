@@ -5,7 +5,7 @@ read TIPE
 
 echo -n "Ваш тип файла $TIPE "
 
-case $NAME in
+case $TIPE in
 
   jpg | gif | png)
     echo -n "image"
