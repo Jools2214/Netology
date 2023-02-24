@@ -1,0 +1,34 @@
+#!/bin/bash
+read -p "Введите первое число" a ;
+
+read -p "Введите второе число" b ;
+
+echo "a=$a"
+
+echo "b=$b"
+
+if [ $b = $a ];
+
+then 
+
+i=b*a
+
+echo $i
+
+fi;
+
+if [ $b -gt $a ];
+
+then
+
+let c=b-a;
+
+echo $c
+
+else
+
+let d=a-b;
+
+echo $d
+
+fi;
