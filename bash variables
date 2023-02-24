@@ -11,7 +11,7 @@ if [ $b = $a ];
 
 then 
 
-i=a*a
+let i=b*a
 
 echo $i
 
