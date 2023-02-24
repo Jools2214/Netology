@@ -7,15 +7,15 @@ echo -n "Ваш тип файла $TIPE "
 
 case $NAME in
 
-  *.jpg | *.gif | *.png )
+  jpg | gif | png )
     echo -n "Картинка"
     ;;
 
-  *.mp3 | *.wav )
+  mp3 | wav )
     echo -n "Звук"
     ;;
 
-  *.txt | *.doc )
+  txt | doc )
     echo -n "Текст"
     ;;
 
