@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -e -p -r "Введите путь к директории: " $path
+read -e -p "Введите путь к директории: " path
 if [ -d "$path" ]
 then
     for size in $(LC_ALL=C stat -c '%F %s' "$1"/* | grep 'regular file' | cut -d ' ' -f 3); do
