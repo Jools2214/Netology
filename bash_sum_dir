@@ -1,2 +1,4 @@
 dir="."
-du -b "$dir" | awk '{ s += $1 } END { print s / NR }'
+sum="$( du -b "$dir" | awk '{ print $1 }' )"
+num="$( find "$dir" -type f | wc -l )"
+echo "$sum / $num" | bc -l
