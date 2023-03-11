@@ -3,6 +3,8 @@
 read -e -p "Введите путь к директории: " path
 if [ -d "$path" ]
 then
+sum_size=0
+count=0
     for size in $(LC_ALL=C stat -c '%F %s' "$1"/* | grep 'regular file' | cut -d ' ' -f 3); do
     let sum_size=$sum_size+$size
     let count=$count+1
