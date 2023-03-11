@@ -1,5 +1,5 @@
 #!/bin/bash
-
+function sumfiledir {
 read -e -p "Введите путь к директории: " path
 if [ -d "$path" ]
 then
@@ -13,3 +13,4 @@ then
 else
     echo "Путь не существует"
 fi
+}
