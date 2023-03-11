@@ -1,0 +1,4 @@
+#!/bin/bash
+for file in /proc/loadavg; do
+  cat "$file" 
+done
