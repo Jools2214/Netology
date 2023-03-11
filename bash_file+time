@@ -1,8 +1,8 @@
 #!/bin/bash
 for file in /proc/loadavg; do
   cat "$file" 
- while true; do
+done
+while true; do
  date=$(date +"%N")
  echo $date
  sleep 5
-done
