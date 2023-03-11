@@ -2,8 +2,8 @@
 while true; do
  date=$(date +"%T")
  echo $date
- sleep 5
-done
 for file in /proc/loadavg; do
   cat "$file" 
+done
+ sleep 5
 done
