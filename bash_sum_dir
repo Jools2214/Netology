@@ -1,13 +1,14 @@
 #!/bin/bash
-
-read -e -p "Введите путь к директории: " path
+function sumfiledir {
+read -e -p -r "Введите путь к директории: " path
 if [ -d "$path" ]
 then
-    for size in $(LC_ALL=C stat -c '%F %s' $1/* | grep 'regular file' | cut -d ' ' -f 3); do
+    for size in $(LC_ALL=C stat -c '%F %s' "$1"/* | grep 'regular file' | cut -d ' ' -f 3); do
     let sum_size=$sum_size+$size
     let count=$count+1
   done
-  echo "Средний размер файлов $(($sum_size/$count))"
+  echo "Средний размер файлов $((sum_size/count))"
 else
     echo "Путь не существует"
 fi
+}
