@@ -1,0 +1,1 @@
+cat nginx.conf | sed -E '/^[[:space:]]*#/d ; /^$/d'
