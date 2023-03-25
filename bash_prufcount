@@ -1,0 +1,1 @@
+ls -l /etc | cut -c1-10 | tail -n +2 | sort | uniq | wc -l > prufcount.txt 
