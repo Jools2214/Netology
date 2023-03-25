@@ -1,0 +1,2 @@
+sudo find /etc -name "*.conf" | wc -l > findetccounter.txt
+sudo locate --regex '(\.conf)$' | grep /etc | wc -l > locateetccounter.txt
