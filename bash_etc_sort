@@ -1,0 +1,1 @@
+cat /etc/* | sort | uniq | wc -l 1> catetcsort.txt 2> /home/dubinin/errorsort.txt
