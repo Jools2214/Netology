@@ -1,0 +1,48 @@
+jpodluzhniy@podluzhniy-VirtualBox:~/46$ sudo docker ps
+CONTAINER ID IMAGE ‘COMMAND:
+NAMES
+I895495b92fa3  zabbix/zabbix-web-apache-pgsql "docker-entrypoint.
+8443->8443/tcp _ podluzhniy-netolog-zabbix- frontend
+
+ge93fe0ess84 — zabbix/zabbix-server-pgsql "/sbin/tint -- /usr/.."
+podluzhniy-zabbix-netology
+
+leafef83cS407 postgres: latest "docker-entrypoint.s.."
+podluzhniy-netology-db
+
+4689b1f30009 — dpage/pgadmina "Jentrypotnt.sh”
+
+podLuzhniy-netology-pgadmin
+podtuzhniy@podluzhnty-VirtualBox:~/46$
+
+CREATED
+
+9 minutes ago
+13 minutes ago
+16 minutes ago
+
+16 minutes ago
+
+STATUS
+
+Up 9 minutes
+Up 11 minutes
+Up 11 minutes
+
+Up 16 minutes
+
+PORTS
+
+©.0.0.0:8080->8080/tcp,
+
+:8080->8080/tcp, 0.0.0.
+
+©.0.0.0:10051->10051/tcp, :::10051->10051/tcp
+
+0.0.0.0:5432->5432/tcp, :::5432->5432/tcp
+
+443/tcp, 0.0.0.0:61231->80/tcp,
+
+61231->80/tcp
+
+:8443->8443/tcp,
