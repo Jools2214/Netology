@@ -1,0 +1,75 @@
+version: '3'
+services:
+  dubininak-netology-db:
+    image: postgres:latest
+    container_name: dubininak-netology-db
+    ports:
+      - 5432:5432
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data/pgdata
+    environment:
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: dubininak_db
+      PGDATA: /var/lib/postgresql/data/pgdata
+    networks:
+      dubininak-my-netology:
+        ipv4_address: 172.22.0.2
+    restart: always
+
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: dubininak-netology-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: dubininak@ilove-netology.com
+      PGADMIN_DEFAULT_PASSWORD: 123
+    ports:
+      - "61231:80"
+    networks:
+      dubininak-my-netology:
+        ipv4_address: 172.22.0.3
+    restart: always
+
+
+  zabbix-server:
+    image: zabbix/zabbix-server-pgsql
+    links:
+      - dubininak-netology-db
+    container_name: dubininak-zabbix-netology
+    environment:
+      DB_SERVER_HOST: '172.22.0.2'
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+    ports:
+      - "10051:10051"
+    networks:
+      dubininak-my-netology:
+        ipv4_address: 172.22.0.4
+    restart: always
+
+
+  zabbix_wgui:
+    image: zabbix/zabbix-web-apache-pgsql
+    links:
+      - dubininak-netology-db
+      - zabbix-server
+    container_name: dubininak-netolog-zabbix-frontend
+    environment:
+      DB_SERVER_HOST: '172.22.0.2'
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 123
+      ZBX_SERVER_HOST: "zabbix_wqui"
+      PHP_TZ: "Europe/Moscow"
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    networks:
+      dubininak-my-netology:
+        ipv4_address: 172.22.0.5
+    restart: always
+networks:
+  dubininak-my-netology:
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 172.22.0.0/24
